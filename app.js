@@ -8,12 +8,15 @@ const app = express();
 //Require routes
 const poll = require('./routes/poll');
 
+//DB Config
+require('./config/db');
+
 //Set public folder
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Body parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Enable CORS
 app.use(cors());
